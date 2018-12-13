@@ -85,7 +85,7 @@ else
      
       if (not e_id_name.ent_wikiid2name[tmp_ent_wikiid]) and RLTD_e_id_name.ent_wikiid2name[tmp_ent_wikiid] then
           e_id_name.ent_wikiid2name[tmp_ent_wikiid] = RLTD_e_id_name.ent_wikiid2name[tmp_ent_wikiid]
-          e_id_name.ent_wikiid2name[RLTD_e_id_name.ent_wikiid2name[tmp_ent_wikiid]] = tmp_ent_wikiid
+          e_id_name.ent_name2wikiid[RLTD_e_id_name.ent_wikiid2name[tmp_ent_wikiid]] = tmp_ent_wikiid
           cnt = cnt + 1
           e_id_name.ent_wikiid2thid[tmp_ent_wikiid] = cnt
           e_id_name.ent_thid2wikiid[cnt] = tmp_ent_wikiid
@@ -93,7 +93,7 @@ else
       end
   end
   print("found in relatedness: ".. found)
-  if not rltd_only then
+  if not rltd_only and not (e_id_name.ent_wikiid2thid[unk_ent_wikiid])then
     cnt = cnt + 1
     e_id_name.ent_wikiid2thid[unk_ent_wikiid] = cnt
     e_id_name.ent_thid2wikiid[cnt] = unk_ent_wikiid

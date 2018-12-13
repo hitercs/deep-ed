@@ -39,3 +39,4 @@ luac.out
 *.x86_64
 *.hex
 data/
+log_train_entity_vecs_part*
